@@ -4,6 +4,7 @@ import com.ws101.longcop.dayday.EcommerceApi.Model.Product;
 import com.ws101.longcop.dayday.EcommerceApi.Service.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.ws101.longcop.dayday.EcommerceApi.Exception.ResourceNotFoundException;
 
 import java.util.List;
 
@@ -44,9 +45,9 @@ public class ProductController {
      */
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable String id) {
-        return productService.getProductById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build()); // Cascades to 404 if missing
+        Product product = productService.getProductById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Product with ID " + id + " was not found."));
+        return ResponseEntity.ok(product);
     }
 
     /**
