@@ -1,4 +1,4 @@
-package com.ws101.lomgcop.dayday.EcommerceApi;
+package com.ws101.longcop.dayday.EcommerceApi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
