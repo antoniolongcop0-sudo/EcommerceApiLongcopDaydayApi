@@ -15,7 +15,7 @@ import java.util.List;
  * Intercepts client incoming network requests and routes them into the database service tier.
  * @author Longcop, Antonio Jr. N.
  */
-@CrossOrigin(origins = "http://localhost:5500", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 @RestController
 @RequestMapping("/api/v1/products")
 public class ProductController {
