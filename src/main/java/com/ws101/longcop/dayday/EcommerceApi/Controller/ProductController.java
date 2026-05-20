@@ -5,6 +5,7 @@ import com.ws101.longcop.dayday.EcommerceApi.Service.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.ws101.longcop.dayday.EcommerceApi.Exception.ResourceNotFoundException;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -70,7 +71,7 @@ public class ProductController {
      * @return the generated product with its appended auto-increment sequence ID
      */
     @PostMapping
-    public ResponseEntity<Product> createProduct(@RequestBody Product product) {
+    public ResponseEntity<Product> createProduct(@Valid @RequestBody Product product) {
         Product savedProduct = productService.createProduct(product);
         return ResponseEntity.status(201).body(savedProduct); // Returns 201 Created explicitly
     }
@@ -82,7 +83,7 @@ public class ProductController {
      * @return the modified domain state result
      */
     @PutMapping("/{id}")
-    public ResponseEntity<Product> updateProduct(@PathVariable String id, @RequestBody Product product) {
+    public ResponseEntity<Product> updateProduct(@PathVariable String id, @Valid @RequestBody Product product) {
         return productService.updateProduct(id, product)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
