@@ -65,10 +65,10 @@ The following table serves as the updated backend route map, now driven entirely
 ## 📸 5. Laboratory Evidence of Success
 
 ### Relational Database Table Rows (MySQL Workbench / DBeaver)
-![Database Table](C:\Users\Omangs\Desktop\database.png)
+![Database Table](Documentation/database.png)
 
 ### Asynchronous Network Pipeline Log (Browser Developer Console)
-![Console Fetch](C:\Users\Omangs\Desktop\web.png)
+![Console Fetch](Documentation/web.png)
 
 ---
 
